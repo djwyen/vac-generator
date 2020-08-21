@@ -22,10 +22,10 @@
 # V , F , CF , CV , CMV , CFR , CVR , CMVR, RCV
 # or more succinctly, (C(M))V(R) , (C)F(R) , (C)R
 
-import random
-import csv
-import os
-from datetime import datetime # for uniquely naming output logs
+# import random
+# import csv
+# import os
+# from datetime import datetime # for uniquely naming output logs
 
 # TODO(derek)
 # - implement illicit sequences
@@ -38,47 +38,47 @@ from datetime import datetime # for uniquely naming output logs
 # You will notice that many of the above features seem interrelated, so think carefully about what order to implement things in
 
 # current version of inventory + syllable structure:
-C = ['t', 'k']
+# C = ['t', 'k']
 
-V = ['a', 'i', 'u']
+# V = ['a', 'i', 'u']
 
 # R for "resonant", aka a sonorant. I exclude semivowel sonorants; they can't be nuclei in my system.
-R = ['n', 'l', 'ŋ']
+# R = ['n', 'l', 'ŋ']
 
 # M for "medial", which precedes vowels
-M = ['j', 'w']
+# M = ['j', 'w']
 
 # S for "syllabic", although with the current version this set also behaves like the medials.
-S = ['n', 'l', 'ŋ', 's', 'ɬ', 'x']
+# S = ['n', 'l', 'ŋ', 's', 'ɬ', 'x']
 
 # maps an illegal sequence to how it is realized
-illegal_seqeuences = {
-    '#tx': '#t',
-    '#st': '#zt',
-    '#ɬt': '#ɮt',
-    '#xt': '#ɣt',
-    '#θk': '#ðk',
-    '#sk': '#zk',
-    '#ɬk': '#ɮk',
-    '#xk': '#ɣk',
-    '#θk': '#ðk',
-}
+# illegal_seqeuences = {
+#     '#tx': '#t',
+#     '#st': '#zt',
+#     '#ɬt': '#ɮt',
+#     '#xt': '#ɣt',
+#     '#θk': '#ðk',
+#     '#sk': '#zk',
+#     '#ɬk': '#ɮk',
+#     '#xk': '#ɣk',
+#     '#θk': '#ðk',
+# }
 
 
-seg_dict = {'C': C, 'V': V, 'R': R, 'M': M, 'S': S}
+# seg_dict = {'C': C, 'V': V, 'R': R, 'M': M, 'S': S}
 
 # you could write a script that converts the parentheses-based form of syllable structures (eg (R)(C)(M)V)
-syllable_structures = [
-    'CV',
-    'CMV',
-    'V',
-    'MV',
-    'SCV',
-    'SCMV',
-    'S',
-    'CS',
-    'CSV'
-]
+# syllable_structures = [
+#     'CV',
+#     'CMV',
+#     'V',
+#     'MV',
+#     'SCV',
+#     'SCMV',
+#     'S',
+#     'CS',
+#     'CSV'
+# ]
 
 class WordGenerator:
 
@@ -116,11 +116,11 @@ class WordGenerator:
 
         return word + '#' # finish with the right syllable boundary
 
-atl_wg = WordGenerator(syllable_structures, seg_dict)
+# atl_wg = WordGenerator(syllable_structures, seg_dict)
 
-now = datetime.now()
-filename = os.path.join('log', now.strftime("%Y-%m-%d %H:%M:%S") + '.csv')
+# now = datetime.now()
+# filename = os.path.join('log', now.strftime("%Y-%m-%d %H:%M:%S") + '.csv')
 
-with open(filename, 'w') as f:
-    for i in range(50):
-        f.write(atl_wg.get_word() + '\n')
+# with open(filename, 'w') as f:
+#     for i in range(50):
+#         f.write(atl_wg.get_word() + '\n')
