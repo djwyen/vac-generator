@@ -18,7 +18,7 @@ class Phoneme:
         return str(other) + self.representation
 
 class PhonotacticSystem:
-    def __init__(self, onsets, nuclei, codas, rimes):
+    def __init__(self, onsets, nuclei, codae, rimes):
         '''
         Represents a phonotactic system, where one specifies sets of viable Phoneme segments in a given position
         '''
